@@ -1,0 +1,41 @@
+Promocion-2026/
+│
+├── login.html                 → Inicio de sesión administrador
+│
+├── admin.html                 → Panel administrativo principal
+│
+├── index.html                 → Vista pública para estudiantes
+│
+├── scanner.html               → Página para escanear QR
+│
+├── css/
+│   │
+│   └── style.css              → Diseño visual (colores, botones, panel)
+│
+├── js/
+│   │
+│   ├── auth.js                → Validación usuario y contraseña
+│   │
+│   ├── firebase-config.js     → Conexión con Firebase
+│   │
+│   ├── participantes.js       → Guardar participantes automáticamente
+│   │
+│   ├── pagos.js               → Registrar pagos y cooperación
+│   │
+│   ├── scanner.js             → Escaneo de códigos QR
+│   │
+│   ├── reportes.js            → Totales y reportes generales
+│   │
+│   └── consulta.js            → Vista pública de consulta
+│
+├── qrs/
+│   │
+│   └── participantes/         → QR individuales de cada estudiante
+│
+├── assets/
+│   │
+│   └── logo.png               → Logo del proyecto (opcional)
+│
+└── firebase/
+    │
+    └── reglas.txt             → Reglas de seguridad Firebase
