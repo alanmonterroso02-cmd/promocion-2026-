@@ -1,13 +1,23 @@
-body {
+/* =========================
+   RESET GENERAL
+========================= */
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f7fa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* =========================
+   BODY GENERAL (LOGIN POR DEFECTO)
+========================= */
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+}
+
+/* =========================
+   LOGIN
+========================= */
 .login-container {
     background: white;
     padding: 30px;
@@ -15,6 +25,9 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     width: 320px;
     text-align: center;
+
+    /* CENTRADO SOLO PARA LOGIN */
+    margin: 100px auto;
 }
 
 input {
@@ -25,6 +38,7 @@ input {
     border-radius: 8px;
 }
 
+/* BOTONES GENERALES */
 button {
     width: 100%;
     padding: 12px;
@@ -33,6 +47,10 @@ button {
     cursor: pointer;
     font-size: 16px;
 }
+
+/* =========================
+   ADMIN PANEL
+========================= */
 .admin-container {
     max-width: 600px;
     margin: auto;
@@ -53,4 +71,36 @@ button {
     border: none;
     border-radius: 10px;
     cursor: pointer;
+}
+
+/* =========================
+   PÁGINA QR (IMPORTANTE)
+========================= */
+body.qr-page {
+    display: block;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+/* CONTENEDOR QR */
+#qrs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* TARJETAS QR */
+#qrs div {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* CANVAS QR */
+canvas {
+    margin-top: 10px;
 }
