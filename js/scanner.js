@@ -1,348 +1,410 @@
 const participantes = [
-// Medicina
+
+  // ================= MEDICINA =================
   {
-    id: 1,
+    numero: 1,
     nombre: "Cabrera Lorenzo Esvin Santiago",
-    grado: "Quinto Medicina"
+    grado: "Quinto Medicina",
+    total: 0
   },
   {
-    id: 2,
+    numero: 2,
     nombre: "Cortéz Hernández Jeferson José Luis",
-    grado: "Quinto Medicina"
+    grado: "Quinto Medicina",
+    total: 0
   },
   {
-    id: 3,
+    numero: 3,
     nombre: "Cristóbal Pérez Lesly Beatriz",
-    grado: "Quinto Medicina"
+    grado: "Quinto Medicina",
+    total: 0
   },
   {
-    id: 4,
+    numero: 4,
     nombre: "Delgado Vicente Noe Michael",
-    grado: "Quinto Medicina"
+    grado: "Quinto Medicina",
+    total: 0
   },
   {
-    id: 5,
+    numero: 5,
     nombre: "Diego Morales Alexis Denilson",
-    grado: "Quinto Medicina"
+    grado: "Quinto Medicina",
+    total: 0
   },
   {
-    id: 6,
+    numero: 6,
     nombre: "García Juárez María Del Carmen",
-    grado: "Quinto Medicina"
+    grado: "Quinto Medicina",
+    total: 0
   },
   {
-    id: 7,
+    numero: 7,
     nombre: "Jiménez Cortéz Yeni Clarisa",
-    grado: "Quinto Medicina"
+    grado: "Quinto Medicina",
+    total: 0
   },
   {
-    id: 8,
+    numero: 8,
     nombre: "Katherin Mishel Ralda Jiménez",
-    grado: "Quinto Medicina"
+    grado: "Quinto Medicina",
+    total: 0
   },
   {
-    id: 9,
+    numero: 9,
     nombre: "Pérez Vaíl Keily Lisbeth",
-    grado: "Quinto Medicina"
+    grado: "Quinto Medicina",
+    total: 0
   },
   {
-    id: 10,
+    numero: 10,
     nombre: "Ramírez Rodríguez Miqueas Emanuel",
-    grado: "Quinto Medicina"
+    grado: "Quinto Medicina",
+    total: 0
   },
   {
-    id: 11,
+    numero: 11,
     nombre: "Reyes Gómez Jorge Geovany",
-    grado: "Quinto Medicina"
+    grado: "Quinto Medicina",
+    total: 0
   },
   {
-    id: 12,
-    nombre: "Vásquez Lucas Fernado Ángel",
-    grado: "Quinto Medicina"
+    numero: 12,
+    nombre: "Vásquez Lucas Fernando Ángel",
+    grado: "Quinto Medicina",
+    total: 0
   },
   {
-    id: 13,
+    numero: 13,
     nombre: "Vásquez Luis Vivian Dayana",
-    grado: "Quinto Medicina"
+    grado: "Quinto Medicina",
+    total: 0
   },
   {
-    id: 14,
+    numero: 14,
     nombre: "Velásquez Cabrera Mynor",
-    grado: "Quinto Medicina"
+    grado: "Quinto Medicina",
+    total: 0
   },
   {
-    id: 15,
+    numero: 15,
     nombre: "Jonatan Margarito",
-    grado: "Quinto Medicina"
+    grado: "Quinto Medicina",
+    total: 0
   },
 
-  // Enfermería
+  // ================= ENFERMERÍA =================
   {
-    id: 16,
+    numero: 1,
     nombre: "Alonzo Pérez Yaquelín Anayeli",
-    grado: "Quinto Enfermería"
+    grado: "Quinto Enfermería",
+    total: 0
   },
   {
-    id: 17,
+    numero: 2,
     nombre: "Cabrera López Yuliza",
-    grado: "Quinto Enfermería"
+    grado: "Quinto Enfermería",
+    total: 0
   },
   {
-    id: 18,
+    numero: 3,
     nombre: "Camacho López Glendy Lisbeth",
-    grado: "Quinto Enfermería"
+    grado: "Quinto Enfermería",
+    total: 0
   },
   {
-    id: 19,
+    numero: 4,
     nombre: "Cortéz Ramos Yeni Carina",
-    grado: "Quinto Enfermería"
+    grado: "Quinto Enfermería",
+    total: 0
   },
   {
-    id: 20,
+    numero: 5,
     nombre: "Díaz González Esmeralda Liseth",
-    grado: "Quinto Enfermería"
+    grado: "Quinto Enfermería",
+    total: 0
   },
   {
-    id: 21,
+    numero: 6,
     nombre: "Hernández Díaz Sabina Lorenza",
-    grado: "Quinto Enfermería"
+    grado: "Quinto Enfermería",
+    total: 0
   },
   {
-    id: 22,
+    numero: 7,
     nombre: "López Vásquez Keily Dayana",
-    grado: "Quinto Enfermería"
+    grado: "Quinto Enfermería",
+    total: 0
   },
   {
-    id: 23,
+    numero: 8,
     nombre: "Ortega Pérez Leidy Noemí",
-    grado: "Quinto Enfermería"
+    grado: "Quinto Enfermería",
+    total: 0
   },
   {
-    id: 24,
+    numero: 9,
     nombre: "Pérez Vásquez Vilma Daniela",
-    grado: "Quinto Enfermería"
+    grado: "Quinto Enfermería",
+    total: 0
   },
   {
-    id: 25,
+    numero: 10,
     nombre: "Rabanales Gómez Neidy Fabiola",
-    grado: "Quinto Enfermería"
+    grado: "Quinto Enfermería",
+    total: 0
   },
 
-  // Derecho
+  // ================= DERECHO =================
   {
-    id: 26,
+    numero: 1,
     nombre: "Marroquín Escobar Karla Andrea",
-    grado: "Quinto Derecho"
+    grado: "Quinto Derecho",
+    total: 0
   },
   {
-    id: 27,
+    numero: 2,
     nombre: "Monterroso Monterroso Beberly Belinda",
-    grado: "Quinto Derecho"
+    grado: "Quinto Derecho",
+    total: 0
   },
   {
-    id: 28,
+    numero: 3,
     nombre: "Reyes Monterroso Mariana Analy",
-    grado: "Quinto Derecho"
+    grado: "Quinto Derecho",
+    total: 0
   },
   {
-    id: 29,
+    numero: 4,
     nombre: "Vásquez Escobar Abraham Santos",
-    grado: "Quinto Derecho"
+    grado: "Quinto Derecho",
+    total: 0
   },
   {
-    id: 30,
+    numero: 5,
     nombre: "Vicente Chile Ashle Mariza",
-    grado: "Quinto Derecho"
+    grado: "Quinto Derecho",
+    total: 0
   },
 
-  // Odontología
+  // ================= ODONTOLOGÍA =================
   {
-    id: 31,
+    numero: 1,
     nombre: "Díaz Gómez José Mario",
-    grado: "Quinto Odontología"
+    grado: "Quinto Odontología",
+    total: 0
   },
   {
-    id: 32,
-    nombre: "Jimenéz Gómez Rolfi Hernan",
-    grado: "Quinto Odontología"
+    numero: 2,
+    nombre: "Jiménez Gómez Rolfi Hernán",
+    grado: "Quinto Odontología",
+    total: 0
   },
   {
-    id: 33,
+    numero: 3,
     nombre: "Méndez Méndez Anderson Hermenegildo",
-    grado: "Quinto Odontología"
+    grado: "Quinto Odontología",
+    total: 0
   },
   {
-    id: 34,
+    numero: 4,
     nombre: "Vásquez Gómez Melvin Gabriel",
-    grado: "Quinto Odontología"
+    grado: "Quinto Odontología",
+    total: 0
   },
 
-  // Mecánica
+  // ================= MECÁNICA =================
   {
-    id: 35,
+    numero: 1,
     nombre: "Alvarez Gantenbein Mario Estuardo",
-    grado: "Quinto Mecánica"
+    grado: "Quinto Mecánica",
+    total: 0
   },
   {
-    id: 36,
+    numero: 2,
     nombre: "Calderón Rivera Edison Iván",
-    grado: "Quinto Mecánica"
+    grado: "Quinto Mecánica",
+    total: 0
   },
   {
-    id: 37,
+    numero: 3,
     nombre: "Carreto Morales Néstor Hernán",
-    grado: "Quinto Mecánica"
+    grado: "Quinto Mecánica",
+    total: 0
   },
   {
-    id: 38,
+    numero: 4,
     nombre: "Delgado Vicente Elmer David",
-    grado: "Quinto Mecánica"
+    grado: "Quinto Mecánica",
+    total: 0
   },
   {
-    id: 39,
-    nombre: "Escobar Méndez Isaac Esau",
-    grado: "Quinto Mecánica"
+    numero: 5,
+    nombre: "Escobar Méndez Isaac Esaú",
+    grado: "Quinto Mecánica",
+    total: 0
   },
   {
-    id: 40,
+    numero: 6,
     nombre: "García Flores Gilver Francisco Josué",
-    grado: "Quinto Mecánica"
+    grado: "Quinto Mecánica",
+    total: 0
   },
   {
-    id: 41,
+    numero: 7,
     nombre: "López Romero Brayan Daniel",
-    grado: "Quinto Mecánica"
+    grado: "Quinto Mecánica",
+    total: 0
   },
   {
-    id: 42,
+    numero: 8,
     nombre: "Marroquín Ramírez Wilfrido Daniel",
-    grado: "Quinto Mecánica"
+    grado: "Quinto Mecánica",
+    total: 0
   },
   {
-    id: 43,
+    numero: 9,
     nombre: "Monterroso López Víctor Geovany",
-    grado: "Quinto Mecánica"
+    grado: "Quinto Mecánica",
+    total: 0
   },
   {
-    id: 44,
+    numero: 10,
     nombre: "Orozco Vásquez Brayan Martín",
-    grado: "Quinto Mecánica"
+    grado: "Quinto Mecánica",
+    total: 0
   },
   {
-    id: 45,
+    numero: 11,
     nombre: "Pérez Carreto Denilson Miguel",
-    grado: "Quinto Mecánica"
+    grado: "Quinto Mecánica",
+    total: 0
   },
   {
-    id: 46,
+    numero: 12,
     nombre: "Romero López Iberton Alexis",
-    grado: "Quinto Mecánica"
+    grado: "Quinto Mecánica",
+    total: 0
   },
 
-  // Electromecánica
+  // ================= ELECTROMECÁNICA =================
   {
-    id: 47,
+    numero: 1,
     nombre: "Agustín López Oscar Rene",
-    grado: "Quinto Electromecánica"
+    grado: "Quinto Electromecánica",
+    total: 0
   },
   {
-    id: 48,
+    numero: 2,
     nombre: "Castillo Barrios Brandon Osiel",
-    grado: "Quinto Electromecánica"
+    grado: "Quinto Electromecánica",
+    total: 0
   },
 
-  // Música
+  // ================= MÚSICA =================
   {
-    id: 49,
+    numero: 1,
     nombre: "López Romero Ester Estefany",
-    grado: "Quinto Música"
+    grado: "Quinto Música",
+    total: 0
   },
 
-  // Electricidad
+  // ================= ELECTRICIDAD =================
   {
-    id: 50,
+    numero: 1,
     nombre: "López Gabriel Abner Gudiel",
-    grado: "Quinto Electricidad"
+    grado: "Quinto Electricidad",
+    total: 0
   },
   {
-    id: 51,
+    numero: 2,
     nombre: "López Romero Andy Leonardo",
-    grado: "Quinto Electricidad"
+    grado: "Quinto Electricidad",
+    total: 0
   },
   {
-    id: 52,
+    numero: 3,
     nombre: "Vicente Pérez Domingo Frisly",
-    grado: "Quinto Electricidad"
+    grado: "Quinto Electricidad",
+    total: 0
   },
   {
-    id: 53,
+    numero: 4,
     nombre: "Vicente Vicente Axel Aroldo",
-    grado: "Quinto Electricidad"
+    grado: "Quinto Electricidad",
+    total: 0
   },
 
-  // Diseño Gráfico
+  // ================= DISEÑO GRÁFICO =================
   {
-    id: 54,
+    numero: 1,
     nombre: "Díaz Pérez Werner Misael",
-    grado: "Quinto Diseño Gráfico"
+    grado: "Quinto Diseño Gráfico",
+    total: 0
   },
   {
-    id: 55,
+    numero: 2,
     nombre: "Gómez Mejía Geraldine Zulimar",
-    grado: "Quinto Diseño Gráfico"
+    grado: "Quinto Diseño Gráfico",
+    total: 0
   },
   {
-    id: 56,
+    numero: 3,
     nombre: "Pérez Romero Brailin Geovany",
-    grado: "Quinto Diseño Gráfico"
+    grado: "Quinto Diseño Gráfico",
+    total: 0
   },
   {
-    id: 57,
+    numero: 4,
     nombre: "Monterroso Rodríguez Dulce Analucia",
-    grado: "Quinto Diseño Gráfico"
+    grado: "Quinto Diseño Gráfico",
+    total: 0
   },
 
-  // Finanzas
+  // ================= FINANZAS Y ADMO =================
   {
-    id: 58,
+    numero: 1,
     nombre: "De León Mazariegos Jennifer Anabelly",
-    grado: "Quinto Finanzas y Admo"
+    grado: "Quinto Finanzas y Administración",
+    total: 0
   },
   {
-    id: 59,
+    numero: 2,
     nombre: "Sac Camacho Eddy Francisco",
-    grado: "Quinto Finanzas y Admo"
+    grado: "Quinto Finanzas y Administración",
+    total: 0
   },
   {
-    id: 60,
+    numero: 3,
     nombre: "Sergio Gonsales",
-    grado: "Quinto Finanzas y Admo"
+    grado: "Quinto Finanzas y Administración",
+    total: 0
   },
   {
-    id: 61,
-    nombre: "Werner Marokin Diaz",
-    grado: "Quinto Finanzas y Admo"
+    numero: 4,
+    nombre: "Werner Marokin Díaz",
+    grado: "Quinto Finanzas y Administración",
+    total: 0
   },
 
-  // Electrónica
+  // ================= ELECTRÓNICA =================
   {
-    id: 62,
+    numero: 1,
     nombre: "Monterroso Gómez Alan Rene",
-    grado: "Quinto Electrónica"
+    grado: "Quinto Electrónica",
+    total: 0
   }
 ];
-
 const contenedor = document.getElementById("qrs");
 
-participantes.forEach(participante => {
+participantes.forEach((participante, index) => {
   const div = document.createElement("div");
 
   div.innerHTML = `
     <h3>${participante.nombre}</h3>
     <p>${participante.grado}</p>
-    <canvas id="qr-${participante.id}"></canvas>
+    <canvas id="qr-${index}"></canvas>
     <br><br>
-    <button onclick="descargarQR('qr-${participante.id}', '${participante.nombre}')">
+    <button onclick="descargarQR('qr-${index}', '${participante.nombre}')">
       Descargar QR
     </button>
     <hr>
@@ -350,20 +412,30 @@ participantes.forEach(participante => {
 
   contenedor.appendChild(div);
 
+  const canvas = document.getElementById(`qr-${index}`);
+
   QRCode.toCanvas(
-    document.getElementById(`qr-${participante.id}`),
+    canvas,
     JSON.stringify(participante),
     function (error) {
-      if (error) console.error(error);
-      console.log("QR generado:", participante.nombre);
+      if (error) {
+        console.error(error);
+      } else {
+        console.log("QR generado:", participante.nombre);
+      }
     }
   );
 });
 
 function descargarQR(canvasId, nombre) {
   const canvas = document.getElementById(canvasId);
-  const link = document.createElement("a");
 
+  if (!canvas) {
+    alert("No se encontró el QR");
+    return;
+  }
+
+  const link = document.createElement("a");
   link.download = `${nombre}.png`;
   link.href = canvas.toDataURL("image/png");
   link.click();
