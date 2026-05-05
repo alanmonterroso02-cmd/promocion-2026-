@@ -3,25 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historial de Pagos - Promoción 2026</title>
+    <title>Historial de Pagos</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <h1>Historial de Pagos</h1>
+    <h1>Historial de Recaudación</h1>
     <h2>Promoción 2026</h2>
-    <button onclick="exportarExcel()">
-        Descargar Reporte Excel
+
+    <!-- SELECT PARA ELEGIR COLECCIÓN -->
+    <select id="coleccion">
+        <option value="pagos">Pagos</option>
+        <option value="playeras">Playeras</option>
+        <option value="viajes">Viajes</option>
+        <option value="graduacion">Graduación</option>
+        <option value="rifas">Rifas</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="cargarDatos()">
+        Ver Datos
     </button>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <button onclick="exportarExcel()">
+        Descargar Excel
+    </button>
 
     <div id="listaPagos"></div>
-    <script>
-    function exportarExcel() {
-        window.location.href = "reporte_promocion_2026.xlsx";
-    }
-    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script type="module" src="js/reportes.js"></script>
 
 </body>

@@ -1,67 +1,104 @@
 import { db } from "./firebase-config.js";
 
 import {
-  collection,
-  getDocs,
-  orderBy,
-  query
+    collection,
+    getDocs,
+    query,
+    orderBy
 } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
 
 const listaPagos = document.getElementById("listaPagos");
+const select = document.getElementById("coleccion");
 
-async function cargarPagos() {
+/* =====================================
+   CARGAR CATEGORÍAS DINÁMICAS
+===================================== */
+
+async function cargarCategorias() {
+
+    select.innerHTML = `<option value="">Seleccione categoría</option>`;
+
+    const snap = await getDocs(collection(db, "categorias"));
+
+    snap.forEach(doc => {
+        const data = doc.data();
+
+        select.innerHTML += `
+            <option value="${data.nombre}">
+                ${data.nombre}
+            </option>
+        `;
+    });
+}
+
+cargarCategorias();
+
+/* =====================================
+   VER DATOS
+===================================== */
+
+window.cargarDatos = async function () {
+
+    const coleccion = select.value;
+
+    if (!coleccion) {
+        alert("Seleccione una categoría");
+        return;
+    }
+
     const q = query(
-        collection(db, "pagos"),
+        collection(db, coleccion),
         orderBy("fecha", "desc")
     );
 
-    const querySnapshot = await getDocs(q);
+    const snap = await getDocs(q);
 
     let html = "";
-    let totalGeneral = 0;
+    let total = 0;
 
-    querySnapshot.forEach((doc) => {
-        const pago = doc.data();
-
-        totalGeneral += pago.monto;
+    snap.forEach(doc => {
+        const d = doc.data();
+        total += d.monto;
 
         html += `
-            <div style="border:1px solid #ccc; padding:15px; margin:10px;">
-                <h3>${pago.nombre}</h3>
-                <p>Grado: ${pago.grado}</p>
-                <p>Monto: Q${pago.monto}</p>
+            <div>
+                <h3>${d.nombre}</h3>
+                <p>Grado: ${d.grado}</p>
+                <p>Monto: Q${d.monto}</p>
             </div>
         `;
     });
 
-    html += `
-        <hr>
-        <h2>Total General Recaudado: Q${totalGeneral}</h2>
-    `;
-
+    html += `<h2>Total: Q${total}</h2>`;
     listaPagos.innerHTML = html;
-}
+};
 
-cargarPagos();
+/* =====================================
+   EXPORTAR EXCEL
+===================================== */
+
 window.exportarExcel = async function () {
+
+    const coleccion = select.value;
+
     const datos = [];
 
-    const querySnapshot = await getDocs(collection(db, "pagos"));
+    const snap = await getDocs(collection(db, coleccion));
 
-    querySnapshot.forEach((doc) => {
-        const pago = doc.data();
+    snap.forEach(doc => {
+        const d = doc.data();
 
         datos.push({
-            Nombre: pago.nombre,
-            Grado: pago.grado,
-            Monto: pago.monto
+            Nombre: d.nombre,
+            Grado: d.grado,
+            Monto: d.monto
         });
     });
 
     const hoja = XLSX.utils.json_to_sheet(datos);
     const libro = XLSX.utils.book_new();
 
-    XLSX.utils.book_append_sheet(libro, hoja, "Pagos");
+    XLSX.utils.book_append_sheet(libro, hoja, "Reporte");
 
-    XLSX.writeFile(libro, "Reporte_Promocion_2026.xlsx");
-}
+    XLSX.writeFile(libro, `Reporte_${coleccion}.xlsx`);
+};

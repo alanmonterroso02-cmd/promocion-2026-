@@ -11,6 +11,7 @@
     <h1>Escáner QR</h1>
     <h2>Promoción 2026</h2>
 
+    <!-- Escáner QR -->
     <div id="reader" style="width:300px;"></div>
 
     <h3>Resultado:</h3>
@@ -18,15 +19,33 @@
 
     <br>
 
-    <input type="number" id="monto" placeholder="Ingrese monto">
+    <!-- Categorías desde Firebase -->
+    <select id="contenedor" required>
+        <option value="">Seleccione una categoría</option>
+    </select>
 
-    <button onclick="registrarPago()">Registrar Pago</button>
+    <br><br>
 
-    <!-- Librería escáner -->
+    <!-- Monto -->
+    <input
+        type="number"
+        id="monto"
+        placeholder="Ingrese monto"
+        required
+    >
+
+    <br><br>
+
+    <!-- Botón -->
+    <button onclick="registrarPago()">
+        Registrar Cobro
+    </button>
+
+    <!-- Librería QR -->
     <script src="https://unpkg.com/html5-qrcode"></script>
 
-    <!-- Archivo JS -->
+    <!-- JS principal -->
     <script type="module" src="js/pagos.js"></script>
-    
+
 </body>
 </html>

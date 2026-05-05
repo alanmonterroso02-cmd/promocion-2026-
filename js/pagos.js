@@ -1,21 +1,32 @@
 import { db } from "./firebase-config.js";
 
 import {
-  collection,
-  addDoc,
-  serverTimestamp
+    collection,
+    addDoc,
+    getDocs,
+    serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
 
 let participanteActual = null;
 
-function onScanSuccess(decodedText, decodedResult) {
-    participanteActual = JSON.parse(decodedText);
+/* =====================================
+   ESCANEAR QR
+===================================== */
 
-    document.getElementById("resultado").innerHTML = `
-        <h3>${participanteActual.nombre}</h3>
-        <p>${participanteActual.grado}</p>
-        <p>ID: ${participanteActual.id}</p>
-    `;
+function onScanSuccess(decodedText) {
+    try {
+        participanteActual = JSON.parse(decodedText);
+
+        document.getElementById("resultado").innerHTML = `
+            <h3>${participanteActual.nombre}</h3>
+            <p><strong>Grado:</strong> ${participanteActual.grado}</p>
+            <p><strong>ID:</strong> ${participanteActual.id}</p>
+        `;
+
+    } catch (error) {
+        console.error(error);
+        alert("QR no válido");
+    }
 }
 
 const html5QrcodeScanner = new Html5QrcodeScanner(
@@ -28,7 +39,46 @@ const html5QrcodeScanner = new Html5QrcodeScanner(
 
 html5QrcodeScanner.render(onScanSuccess);
 
+/* =====================================
+   CARGAR CATEGORÍAS
+===================================== */
+
+async function cargarCategorias() {
+    const select = document.getElementById("contenedor");
+
+    select.innerHTML = `
+        <option value="">Seleccione categoría</option>
+    `;
+
+    try {
+        const querySnapshot = await getDocs(
+            collection(db, "categorias")
+        );
+
+        querySnapshot.forEach((doc) => {
+            const data = doc.data();
+
+            select.innerHTML += `
+                <option value="${data.nombre}">
+                    ${data.nombre}
+                </option>
+            `;
+        });
+
+    } catch (error) {
+        console.error(error);
+        alert("Error al cargar categorías");
+    }
+}
+
+cargarCategorias();
+
+/* =====================================
+   REGISTRAR COBRO
+===================================== */
+
 window.registrarPago = async function () {
+    const contenedor = document.getElementById("contenedor").value;
     const monto = document.getElementById("monto").value;
 
     if (!participanteActual) {
@@ -36,13 +86,18 @@ window.registrarPago = async function () {
         return;
     }
 
-    if (!monto || monto <= 0) {
+    if (!contenedor) {
+        alert("Seleccione una categoría");
+        return;
+    }
+
+    if (!monto || Number(monto) <= 0) {
         alert("Ingrese un monto válido");
         return;
     }
 
     try {
-        await addDoc(collection(db, "pagos"), {
+        await addDoc(collection(db, contenedor), {
             participanteId: participanteActual.id,
             nombre: participanteActual.nombre,
             grado: participanteActual.grado,
@@ -50,12 +105,12 @@ window.registrarPago = async function () {
             fecha: serverTimestamp()
         });
 
-        alert("Pago guardado correctamente en Firebase");
+        alert("Cobro guardado correctamente en: " + contenedor);
 
         document.getElementById("monto").value = "";
 
     } catch (error) {
         console.error(error);
-        alert("Error al guardar el pago");
+        alert("Error al guardar el cobro");
     }
-}
+};
