@@ -27,7 +27,14 @@
     <br><br>
 
     <div id="mensaje"></div>
-
+    <!-- login obligatorio --> 
+    <script>
+    // Verificar si inició sesión
+    if (localStorage.getItem("logueado") !== "true") {
+        alert("Debes iniciar sesión primero");
+        window.location.href = "index.html";
+    }
+    </script>
     <script type="module" src="js/categorias.js"></script>
 
 </body>

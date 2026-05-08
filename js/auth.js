@@ -6,6 +6,9 @@ function login() {
     var pass = document.getElementById("pass").value;
 
     if (user === usuario && pass === password) {
+        // Guardar sesión iniciada
+        localStorage.setItem("logueado", "true");
+
         alert("Acceso correcto");
         window.location.href = "admin.html";
     } else {

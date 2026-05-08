@@ -16,7 +16,14 @@
     <button onclick="buscarParticipante()">Consultar</button>
 
     <div id="resultadoConsulta"></div>
-
+    <!-- login obligatorio -->
+    <script>
+    // Verificar si inició sesión
+    if (localStorage.getItem("logueado") !== "true") {
+        alert("Debes iniciar sesión primero");
+        window.location.href = "index.html";
+    }
+    </script>
     <script type="module" src="js/consulta.js"></script>
 
 </body>

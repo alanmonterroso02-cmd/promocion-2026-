@@ -40,7 +40,14 @@
     <button onclick="registrarPago()">
         Registrar Cobro
     </button>
-
+    <!-- login obligatorio -->
+    <script>
+    // Verificar si inició sesión
+    if (localStorage.getItem("logueado") !== "true") {
+        alert("Debes iniciar sesión primero");
+        window.location.href = "index.html";
+    }
+    </script>
     <!-- Librería QR -->
     <script src="https://unpkg.com/html5-qrcode"></script>
 

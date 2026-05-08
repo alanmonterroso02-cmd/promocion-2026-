@@ -37,10 +37,18 @@
         </div>
 
     </div>
-
+    <!-- login obligatorio -->
+    <script>
+    // Verificar si inició sesión
+    if (localStorage.getItem("logueado") !== "true") {
+        alert("Debes iniciar sesión primero");
+        window.location.href = "index.html";
+    }
+    </script>
     <script>
         function cerrarSesion() {
             window.location.href = "index.html";
+            localStorage.removeItem("logueado");
         }
     </script>
 
